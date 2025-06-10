@@ -4,183 +4,135 @@ body {
     background-color: #1b1b1b;
     font-family: 'Montserrat', sans-serif;
 }
-
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(10px) saturate(200%) brightness(70%);
-    color: #fff;
-    display: flex;
-    height: 7vw;
-    width: 100%;
-    align-items: center;
-    justify-content: left;
-    padding: 0 1%;
-    z-index: 5;
-    margin: auto;
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #222;
+  color: #eee;
 }
 
-nav img {
-    height: 80%;
-    width: auto;
-    margin-right: 1%;
-    border-radius: 1vw;
-    cursor: pointer;
-    user-select: none;
-    box-shadow: 5px 5px 10px rgba(53, 53, 53, 0.459);
+/* Header and Footer (used on index and multi-page views) */
+header,
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #333;
 }
 
-nav h1 {
-    font-size: 4vw;
-    font-weight: 800;
-    margin-right: 1%;
+footer {
+  font-size: 0.8em;
 }
 
-.content {
-    flex-direction: column;
-    align-items: left;
-    padding: 7vw;
-    padding-top: 0vw;
+/* Home Page Game Grid (for index page view) */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
-.content hr {
-    border: 0;
-    height: 4px;
-    background-image:
-url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2Fabstract-red-and-black-banner-background--321796335870282541%2F&psig=AOvVaw1H7DnOcb8ILSVYS3o_8o9j&ust=1749678219429000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMCR3Lfp540DFQAAAAAdAAAAABAE');
-    margin: 1vw 0;
+.game-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  background: #444;
+  text-decoration: none;
+  color: #eee;
+  font-size: 1.2em;
+  border: 2px solid #666;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.search {
-    display: flex;
-    user-select: none;
-    margin-top: 2.5vw;
-    margin-left: 1.2vw;
-}
- 
-.search input {
-    background-color: #222222;
-    border: none;
-    border-radius: 1vw 0 0 1vw;
-    color: #fff;
-    font-size: 1.5vw;
-    font-weight: 600;
-    padding: 0.8vw 1.5vw;
-    font-family: 'Montserrat', sans-serif;
-    z-index: 1;
-    outline: none;
-}
- 
-.search input::placeholder {
-    color: #fff;
-    font-weight: 600;
-    font-size: 1.5vw;
-}
- 
-.search button {
-    background-color: #fff;
-    border: none;
-    border-radius: 0 1vw 1vw 0;
-    color:#222222;
-    font-size: 1.5vw;
-    font-weight: 600;
-    padding: 0.8vw 1vw;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    z-index: 1;
-    transition: .3s all ease;
-}
- 
-#games {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: .6vw;
-    padding-bottom: 5vw;
-
-}
- 
-#games img {    height: 15.6vw;
-    width: 15.6vw;
-    border-radius: 1vw;
-    margin: .5vw;
-    cursor: pointer;
-    user-select: none;
-    transition: transform .2s;
-}
- 
-#games img:hover {
-    transform: scale(1.01);
+.game-tile:hover {
+  transform: scale(1.05);
+  background: #555;
 }
 
-.featured {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1vw;
-    margin:1%;
-    margin-top: 6vw;
+/* Subpage Home Button (for game pages with navigation) */
+.home-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
-.featured h1 {
-    font-size: 3.5vw;
-    font-weight: 700;
-    margin: 1vw 1vw .4vw 1vw;
-    width: 83.8%;
-    text-align: left;
-    color: #fff;
+.home-button a {
+  text-decoration: none;
+  background: #444;
+  padding: 10px 15px;
+  color: #eee;
+  border: 2px solid #666;
 }
 
-.featured .column {
-    display: flex;
-    flex-direction: column;
+/* Game Container and Border (for game page view) */
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
 }
 
-.featured img {
-    height: 12.5vw;
-    width: 12.5vw;
-    border-radius: 1vw;
-    margin: .5vw;
-    cursor: pointer;
-    user-select: none;
-    transition: all .2s;
+.game-border {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  border: 8px solid #666;
+  box-shadow: 0 0 10px #000;
+  background: #000;
 }
 
-.featured img:hover {
-    transform: scale(1.02);
-    filter: brightness(50%);
+.game-border iframe {
+  width: 100%;
+  height: 450px;
+  display: block;
 }
 
-
-.featured .row img {
-    height: 26vw;
-    width: 26vw;
+/* Fullscreen styling with vendor prefixes targeting the game element.
+   In fullscreen, the border and box shadow are removed.
+*/
+.game-border:fullscreen,
+.game-border:-webkit-full-screen,
+.game-border:-moz-full-screen,
+.game-border:-ms-fullscreen {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  box-shadow: none;
 }
 
-.featured a {
-    display: inline-block;
-    position: relative;
-    color: #2c7ffc;
-    text-decoration: none;
+/* Fullscreen Button */
+#fullscreenBtn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background: #444;
+  color: #eee;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border: 2px solid #666;
 }
-    
-    .featured .play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.2s;
-    }
-    
-    .featured a:hover .play-button {
-    opacity: 1;
-    pointer-events: none;
-    }
-    
-    .featured .play-button i {
-    font-size: 5vw;
-    text-shadow: 0 0 100px #2c7ffc;
-    }
+
+#fullscreenBtn:hover {
+  background: #555;
+}
+
+/* Additional rules for game-only views (if needed)
+   Uncomment or apply these styles when you want to hide other elements.
+*/
+/*
+body.game-only {
+  background: #000;
+  overflow: hidden;
+}
+
+header,
+footer,
+.home-button,
+.game-grid {
+  display: none;
+}
+*/
