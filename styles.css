@@ -47,7 +47,8 @@ nav h1 {
 .content hr {
     border: 0;
     height: 4px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255, 255, 255), rgba(0, 0, 0, 0));
+    background-image:
+url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2Fabstract-red-and-black-banner-background--321796335870282541%2F&psig=AOvVaw1H7DnOcb8ILSVYS3o_8o9j&ust=1749678219429000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMCR3Lfp540DFQAAAAAdAAAAABAE');
     margin: 1vw 0;
 }
 
